@@ -232,7 +232,7 @@ em { font-style: oblique; }
 }
 
 .sidebar .jScrollPaneTrack { right: -1px !important; }
-.sidebar .jScrollArrowUp, .jScrollArrowDown { right: -1px !important; }
+.sidebar .jScrollArrowUp, .sidebar .jScrollArrowDown { right: -1px !important; }
 
 .sidebar ul {
 	list-style: none;
@@ -320,3 +320,47 @@ em { font-style: oblique; }
 .jScrollArrowDown { bottom: 0; background: transparent url('../images/ui/scrollbar-down-arrow.png'); }
 
 .jScrollArrowDown:active, .jScrollArrowUp:active { background-position: left -21px; }
+
+.main {
+	position: absolute;
+	left: 246px;
+	right: 0;
+	top: 25px;
+	bottom: 41px;
+	overflow: hidden;
+	background: #fff url('../images/ui/table-bg.png') repeat-x top;
+}
+
+.main .content { height: 100%; }
+table { border-collapse:collapse; width: 100%; }
+#songs { margin-top: 17px; }
+
+table.header { 
+	z-index: 2; 
+	position: absolute; 
+	background: #fff url('../images/ui/table-bg.png') repeat-x;
+}
+
+table th {
+	font-weight: bold;
+	color: #202020;
+	text-shadow: #fff 0px 1px 1px;
+	border-left:1px solid #B7B7B7;
+	
+}
+
+table td { border-left:1px solid #DDD; border-bottom: 1px solid #E7E7E7; }
+table td.alt { background-color: #F1F5FA; }
+
+table th, table td {
+	padding: 2px 5px 3px 5px;
+	text-align: left;
+	font-size: 10px;
+}
+
+table th:first-child, table td:first-child { border-left: 0px; }
+
+table .time { width: 60px; }
+table .artist, table .genre { width: 120px; }
+table .status { width: 16px; }
+.text-right {	text-align: right; !important; }

@@ -20,22 +20,36 @@ var player = {
 		});
 
 		$(window).resize(function(){ 
-			var scrollTop = Math.abs($('.sidebar ul').position().top);
+
+			var scrollTop1 = Math.abs($('.sidebar ul').position().top);
+			var scrollTop2 = Math.abs($('.main .content').position().top);
 			
-			$('.sidebar ul').jScrollPaneRemove();
+			$('.sidebar ul, .main .content').jScrollPaneRemove();
+			$('.main .content').jScrollPane({
+				scrollbarWidth: 14,
+				wheelSpeed: 32,
+				showArrows: true,
+				scrollbarMargin: 0,
+				topCapHeight: 17
+			});		
 			$('.sidebar ul').jScrollPane({
 				scrollbarWidth: 14,
 				wheelSpeed: 32,
 				showArrows: true,
 				scrollbarMargin: 0
-			});		
-			console.log(scrollTop);		
-			$('.sidebar ul')[0].scrollTo(scrollTop);
+			});	
+			
+			$('.sidebar ul')[0].scrollTo(scrollTop1);
+			$('.main .content')[0].scrollTo(scrollTop2);
 		}).resize();
 		
 		$("#tree").sortable({
 			placeholder: 'placeholder'
 		});
+		
+		setInterval(function () {
+			$('.main .header').css('width', $('#songs').width());
+		}, 500);
 		
 		setInterval(function () {
 			var top = $('#band').css('margin-top') == "0px" ? -14 : 0;

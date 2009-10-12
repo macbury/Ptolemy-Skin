@@ -29,12 +29,37 @@
 					Library
 				</a>
 			</li>
-			<script type="text/javascript" charset="utf-8">
-				for (var i=0; i < 100; i++) {
-					document.write('<li><a href="#">Synced</a></li>');
-				};
-			</script>
+
 		</ul>
+	</div>
+	
+	<div class="main">
+		<table class="header">
+			<tr>
+				<th class="status"></th>
+				<th>Title</th>
+				<th class="text-right time">Time</th>
+				<th class="artist">Artist</th>
+				<th class="genre">Genre</th>
+			</tr>
+		</table>
+		<div class="content">
+			<table id="songs">
+				<tr>
+					<td class="status"></td>
+					<td>10th Man Down</td>
+					<td class="text-right time">5:20</td>
+					<td class="artist">Nightwish</td>
+					<td class="genre">Metal</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script type="text/javascript" charset="utf-8">
+			for (var i=0; i < 100; i++) {
+				$('#songs tr:first').clone().appendTo('#songs');
+			};
+		</script>
 	</div>
 	
 	<ul class="menu">
