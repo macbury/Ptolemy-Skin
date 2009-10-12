@@ -1,0 +1,322 @@
+body {
+	font: 12px  Verdana, sans-serif;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+a { cursor: default; text-decoration: none; }
+acronym { cursor: help; }
+em { font-style: oblique; }
+.clear { clear: both; }
+
+.ui-corner-all {
+	-webkit-border-radius: 5px;
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #000 url('../images/ui/menu-bg.png') repeat-x;
+	height: 25px;
+}
+
+.menu > li {
+	background: transparent url('../images/ui/menu-split.png') no-repeat right;
+	float: left;
+	padding-right: 2px;
+	height: 25px;
+}
+
+.menu > li:last-child { 
+	background-position: left; 
+	padding-right: 0; 
+	padding-left: 2px;
+	float: right; 
+} 
+
+.menu > li > a {
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	text-shadow: #000 0 -1px 1px;
+	display: block;
+	line-height: 25px;
+	padding: 0 10px;
+}
+
+.menu > li > a:active { background: #000 url('../images/ui/menu-active.png') repeat-x; }
+
+.player {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #fff url('../images/ui/toolbar.png') repeat-x bottom;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 1px solid #1F1F1F;
+}
+
+.player > li { float: left; }
+.player > li:first-child { margin-left: 5px; }
+
+.player > li > .roundbutton, .player > li > .mini-roundbutton {
+	height: 32px;
+	width: 32px;
+	margin: 4px 0 3px 5px;
+	display: block;
+	text-indent: -999999px;
+	background: transparent url() no-repeat top left;
+}
+
+.player > li > .mini-roundbutton {
+	height: 25px;
+	width: 25px;
+	margin: 8px 0 5px 5px;
+}
+
+.player > li > .mini-roundbutton:active:not(.disabled) { background-position: top -25px; }
+.player > li > .mini-roundbutton.disabled { background-position: top -50px; }
+
+.player > li > .roundbutton:active:not(.disabled) { background-position: top -32px; }
+.player > li > .roundbutton.disabled { background-position: top -64px; }
+
+.player .play { background-image: url('../images/ui/main-control-play.png') !important; }
+.player .pause { background-image: url('../images/ui/main-control-pause.png') !important; }
+.player .prev { background-image: url('../images/ui/main-control-prev.png') !important; }
+.player .next { background-image: url('../images/ui/main-control-next.png') !important; }
+
+.player > .display {
+	margin: 0 5px;
+	height: 40px;
+	color: #fff;
+	text-shadow: #272727 0px -1px 1px;
+}
+
+.player > .right {
+	float: right;
+}
+
+.player > .display > div { float: left; }
+
+.player > .display > .song {
+	float: none;
+	margin: 4px 0 4px 0;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	overflow: hidden;
+	height: 13px;
+}
+
+.player > .display > .song > #band { margin-top: -14px; }
+.player > .display > .song > a { color: #fff; cursor: pointer; display: block; }
+
+.player > .display > .time {
+	font-size: 10px;
+	margin: -2px 5px 0 5px;
+}
+
+.player > .display .ui-slider { width: 320px !important; }
+
+.player > .volume {
+	height: 40px;
+	padding-left: 30px;
+	background: transparent url('../images/ui/volume.png') no-repeat 5px center;
+	margin: 0 0 0 10px;
+}
+
+.player > .volume > div { margin: 15px 0px; float: left; }
+
+.player > .split {
+	height: 40px;
+	width: 2px;
+	background: transparent url('../images/ui/toolbar_div.png');
+	margin: 0 15px;
+}
+
+.player > .search { padding: 8px 10px 0 0px; }
+
+.player > .search input {
+	background: #fff url('../images/ui/search-bg.png') repeat-x;
+	font-size: 11px;
+	border: 0;
+	padding: 3px 0px 3px 0px;
+	width: 110px;
+	float: left;
+}
+
+.player > .search > .left, .player > .search > .right {
+	background: transparent url('../images/ui/search-bg-left.png');
+	width: 20px;
+	height: 19px;
+	float: left;
+	margin-top: 2px;
+}
+
+.player > .search > .right {
+	background: transparent url('../images/ui/search-bg-right.png');
+	width: 10px;
+}
+
+.player > li > .switch {
+	height: 22px;
+	width: 22px;
+	margin: 9px 0 3px 5px;
+	display: block;
+	text-indent: -999999px;
+	background: transparent url() no-repeat top left;
+}
+
+.player > li > .switch.on { background-position: left -22px; }
+.player > li > .switch:active { background-position: left -45px; }
+
+.player > li > .shuffle { background-image: url('../images/ui/shuffle.png'); }
+.player > li > .repeat { background-image: url('../images/ui/repeat.png'); }
+
+.ui-slider {
+	background: transparent url('../images/ui/slider-bg.png') repeat-x;
+	height: 10px;
+	width: 80px;
+	position: relative;
+	text-align: left;
+}
+
+.ui-slider-range {
+	left: 0px;
+	height: 100%;
+	top: 0px;
+	border: 0px;
+	display: block;
+	position: absolute;
+	z-index: 1;
+	
+	background: transparent url('../images/ui/slider-bg.png') repeat-x 0px -10px;
+}
+
+.ui-slider-left, .ui-slider-right {
+	background: transparent url('../images/ui/slider-left.png') no-repeat;
+	width: 4px;
+	height: 10px;
+}
+
+.ui-slider-left-active, .ui-slider-right-active { background-position: 0 -10px; }
+.ui-slider-right { background: transparent url('../images/ui/slider-right.png') no-repeat; }
+
+.ui-slider .ui-slider-handle {
+	cursor: default;
+	height: 12px;
+	position: absolute;
+	width: 12px;
+	margin: -1px 9px 1px -6px;
+	z-index: 2;
+	background: transparent url('../images/ui/knob.png') no-repeat;
+}
+
+.ui-slider .ui-slider-handle:active { background-position: left -12px; }
+
+.sidebar {
+	width: 245px;
+	top: 25px;
+	bottom: 41px;
+	left: 0;
+	position: absolute;
+	background: #D5DDE4;
+	border-right: 1px solid #8B8B8B;
+	overflow: hidden;
+}
+
+.sidebar .jScrollPaneTrack { right: -1px !important; }
+.sidebar .jScrollArrowUp, .jScrollArrowDown { right: -1px !important; }
+
+.sidebar ul {
+	list-style: none;
+	margin: 5px -1px 0 0;
+	padding: 0;
+	height: 100%;
+}
+
+.sidebar ul > li > a {
+	display: block;
+	padding: 4px 10px 5px 25px;
+	background: transparent url('../images/ui/icons/playlist.png') no-repeat 5px center;
+	color: #000;
+	font-size: 10px;
+}
+
+.sidebar ul .placeholder {
+	height: 2px;
+	background: #135CB2;
+	margin: 0 5px;
+}
+
+.sidebar ul > .ui-selected {
+	background: #3978B6 url('../images/ui/sidebar-selected.png') repeat-x;
+}
+
+.sidebar ul > .ui-selected > a {
+	color: #fff;
+	font-weight: bold;
+	text-shadow: #1C4369 0px 1px 1px;
+}
+
+.sidebar ul > li > .library { background-image: url('../images/ui/icons/library.png'); }
+
+.jScrollPaneTrack {
+	position: absolute;
+	width: 14px;
+	background: transparent url('../images/ui/scrollbar-bg.png') repeat-y;
+	position: absolute;
+	cursor: default;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100% !important;
+}
+
+.jScrollPaneDrag {
+	position: absolute;
+	cursor: default;
+	background: transparent url('../images/ui/scrollbar-knob-bg.png') repeat-y;
+	z-index: 2;
+}
+
+.jScrollPaneDragTop, .jScrollPaneDragBottom {
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	height: 9px;
+}
+
+.jScrollPaneDragTop {
+	background: transparent url('../images/ui/scrollbar-knob-top.png');
+	top: 0px;
+	margin-top: -5px;
+}
+
+.jScrollPaneDragBottom {
+	background: transparent url('../images/ui/scrollbar-knob-down.png');
+	bottom: 0px;
+	margin-bottom: -5px;
+}
+
+.jScrollArrowUp, .jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	text-indent: -99999px;
+	overflow: hidden;
+	height: 21px;
+	width: 14px;
+}
+
+.jScrollArrowUp { top: 0; background: transparent url('../images/ui/scrollbar-up-arrow.png'); }
+.jScrollArrowDown { bottom: 0; background: transparent url('../images/ui/scrollbar-down-arrow.png'); }
+
+.jScrollArrowDown:active, .jScrollArrowUp:active { background-position: left -21px; }
