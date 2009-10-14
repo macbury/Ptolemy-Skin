@@ -332,6 +332,26 @@ em { font-style: oblique; }
 }
 
 .main .content { height: 100%; }
+.main .content table { margin-top: 17px; }
+
+.main .content .ui-selected, .main .content .ui-selecting {
+	color: #fff !important;
+	background-color: #3588D9 !important;
+	border-color: #fff !important;
+}
+
+.ui-table-drag-helper {
+	padding: 2px 5px 3px 5px;
+	font-size: 10px;
+	cursor: move;
+	background: #fff;
+	opacity: 0.6;
+	color: #000;
+	border: 1px solid #000;
+	z-index: 10;
+	position: fixed !important;
+}
+
 table { border-collapse:collapse; width: 100%; }
 #songs { margin-top: 17px; }
 
@@ -350,17 +370,18 @@ table th {
 }
 
 table td { border-left:1px solid #DDD; border-bottom: 1px solid #E7E7E7; }
-table td.alt { background-color: #F1F5FA; }
+table .alt { background-color: #F1F5FA; }
 
 table th, table td {
 	padding: 2px 5px 3px 5px;
 	text-align: left;
 	font-size: 10px;
+	cursor: default;
 }
 
 table th:first-child, table td:first-child { border-left: 0px; }
 
-table .time { width: 60px; }
+table .time { width: 60px; text-align: right; }
 table .artist, table .genre { width: 120px; }
 table .status { width: 16px; }
 .text-right {	text-align: right; !important; }

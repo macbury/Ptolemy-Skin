@@ -10,17 +10,30 @@
 <script src="javascripts/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="javascripts/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
 <script src="javascripts/jquery.scroll-pane.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/UIKit/ui.table.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/helpers/time_helper.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/UIKit/ui.datasource.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="javascripts/player.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/controllers/player_controller.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/controllers/playlist_controller.js" type="text/javascript" charset="utf-8"></script>
+
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function () {
-		player.init();
+		PlayerController.init();
+		PlayListController.init();
 	});
 </script>
 
 </head>
 <body>
+
+	<ul class="menu">
+		<li><a href="#">Playlist</a></li>
+		<li><a href="#">Friends</a></li>
+		<li><a href="#">Options</a></li>
+		<li><a href="#">Log in</a></li>
+	</ul>
 	
 	<div class="sidebar">
 		<ul id="tree">
@@ -34,6 +47,7 @@
 	</div>
 	
 	<div class="main">
+		<!-->
 		<table class="header">
 			<tr>
 				<th class="status"></th>
@@ -59,17 +73,8 @@
 			for (var i=0; i < 100; i++) {
 				$('#songs tr:first').clone().appendTo('#songs');
 			};
-		</script>
+		</script>-->
 	</div>
-	
-	<ul class="menu">
-		<li>
-			<a href="#">Options</a>
-		</li>
-		<li>
-			<a href="#">Log in</a>
-		</li>
-	</ul>
 	
 	<ul class="player">
 		<li>
