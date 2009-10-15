@@ -2,6 +2,8 @@
 //Blog:  http://macbury.jogger.pl
 
 $.widget("ui.tableView", {
+	selected: null,
+	
 	_init: function(){
 		var element = $(this.element);
 		
@@ -27,12 +29,13 @@ $.widget("ui.tableView", {
 		rows.click(function (e) {
 			$(this).siblings('tr').removeClass('ui-selected');
 			$(this).addClass('ui-selected');
-				delegate.clickedRow(self, delegate.dataSource(self).findById($(this).data('id')));
+				self.selected = delegate.dataSource(self).findById($(this).data('id'));
+				delegate.clickedRow(self, self.selected);
 		}).dblclick(function (e) {
 			e.stopPropagation();
 			$(this).siblings('tr').removeClass('ui-selected');
 			$(this).addClass('ui-selected');
-				delegate.doubleClickedRow(self, delegate.dataSource(self).findById($(this).data('id')));
+			delegate.doubleClickedRow(self, self.selected);
 		});
 		
 		rows.draggable({
@@ -65,21 +68,25 @@ $.widget("ui.tableView", {
 		var delegate = this.options.delegate || this.options;
 		
 		var dataSource = delegate.dataSource(self);
+		var elements = dataSource.toArray();
+		var tableColumns = delegate.tableColumns();
 		
 		content.empty();
-		$.each(dataSource.toArray(), function (row_index, data) {
+		
+		for (var row_index=0; row_index < elements.length; row_index++) {
+			var data = elements[row_index];
 			var row = $('<tr></tr>');
 			row.attr('id', dataSource.to_dom_id(data));
 			row.data('id', data.id);
 			
 			if (self.options.useAlternatingRowBackground && row_index % 2 != 0) { row.addClass(self.options.alternatingRowBackgroundClass.replace('.', '')) };
 			
-			$.each(delegate.tableColumns(), function (column_index, column) { 
-				row.append(delegate.contentForRowByColumn(self, data, column, column_index));
-			});
+			for (var column_index=0; column_index < tableColumns.length; column_index++) {
+				row.append(delegate.contentForRowByColumn(self, data, tableColumns[column_index], column_index));
+			};
 			
 			content.append(row);
-		});
+		}
 		
 		this._setupSelectable();
 	},
