@@ -8,11 +8,7 @@ function DataSource(options) {
 		filter: null,
 		
 		humanize: function(count){
-			if (count > 1 || count == 0) {
-				return this.inflector[1]
-			} else {
-				return this.inflector[0];
-			}
+			return (count > 1 || count == 0) ? this.inflector[1] : this.inflector[0];
 		},
 		
 		to_dom_id: function(element){
